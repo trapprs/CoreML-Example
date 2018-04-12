@@ -25,11 +25,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return (prediction.classLabel, prediction.foodConfidence)
     }
     
+    @IBAction func getImageFromPhone(_ sender: Any) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func takePicture(_ sender: Any) {
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
@@ -49,7 +56,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         for i in prediction.1 {
             if i.key.contains(prediction.0) {
-                predictionDescrition = "This image has \(Double(floor(i.value * 100)))% of chance to be \(i.key.replacingOccurrences(of: "_", with: " "))"
+                predictionDescrition = "This image has \(Double(floor(i.value * 100)))% of chance to be a \(i.key.replacingOccurrences(of: "_", with: " "))"
             }
         }
         self.FoodNme.text = "\(predictionDescrition)"
