@@ -8,15 +8,15 @@
 
 import UIKit
 
-
-class Convert {
-   
+struct Convert {
+    
    @discardableResult
    static func convertTOCVPixelBuffer(image: UIImage) -> (CVPixelBuffer, UIImage) {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 1)
         image.draw(in: CGRect(x: 0, y: 0, width: 299, height: 299))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+    
         let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
         var pixelBuffer: CVPixelBuffer?
         
@@ -34,6 +34,7 @@ class Convert {
         UIGraphicsPushContext(context!)
         newImage.draw(in: CGRect(x: 0, y: 0, width: newImage.size.width, height: newImage.size.height))
         UIGraphicsPopContext()
+    
         CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
         
         return (pixelBuffer!, newImage)
