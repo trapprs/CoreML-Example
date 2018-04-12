@@ -14,6 +14,9 @@
 		E099C10B207E813300C57294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E099C109207E813300C57294 /* LaunchScreen.storyboard */; };
 		E099C116207E813300C57294 /* CoreMLChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099C115207E813300C57294 /* CoreMLChallengeTests.swift */; };
 		E099C121207E813300C57294 /* CoreMLChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099C120207E813300C57294 /* CoreMLChallengeUITests.swift */; };
+		E099C12F207E8B5600C57294 /* Food101.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E099C12E207E8B5600C57294 /* Food101.mlmodel */; };
+		E099C133207EA96100C57294 /* FNS-Candy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E099C132207EA96100C57294 /* FNS-Candy.mlmodel */; };
+		E099C135207FD81500C57294 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099C134207FD81500C57294 /* Convert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		E099C11C207E813300C57294 /* CoreMLChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMLChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E099C120207E813300C57294 /* CoreMLChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLChallengeUITests.swift; sourceTree = "<group>"; };
 		E099C122207E813300C57294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E099C12E207E8B5600C57294 /* Food101.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Food101.mlmodel; sourceTree = "<group>"; };
+		E099C132207EA96100C57294 /* FNS-Candy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FNS-Candy.mlmodel"; sourceTree = "<group>"; };
+		E099C134207FD81500C57294 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,15 @@
 		E099C0FF207E813100C57294 /* CoreMLChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				E099C12E207E8B5600C57294 /* Food101.mlmodel */,
 				E099C100207E813100C57294 /* AppDelegate.swift */,
+				E099C132207EA96100C57294 /* FNS-Candy.mlmodel */,
 				E099C102207E813100C57294 /* ViewController.swift */,
 				E099C104207E813100C57294 /* Main.storyboard */,
 				E099C107207E813300C57294 /* Assets.xcassets */,
 				E099C109207E813300C57294 /* LaunchScreen.storyboard */,
 				E099C10C207E813300C57294 /* Info.plist */,
+				E099C134207FD81500C57294 /* Convert.swift */,
 			);
 			path = CoreMLChallenge;
 			sourceTree = "<group>";
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E099C133207EA96100C57294 /* FNS-Candy.mlmodel in Sources */,
+				E099C12F207E8B5600C57294 /* Food101.mlmodel in Sources */,
 				E099C103207E813100C57294 /* ViewController.swift in Sources */,
+				E099C135207FD81500C57294 /* Convert.swift in Sources */,
 				E099C101207E813100C57294 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
