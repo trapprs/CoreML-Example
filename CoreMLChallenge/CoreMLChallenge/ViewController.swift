@@ -33,14 +33,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
-        var image = UIImage()
         var predictionDescrition = ""
+        var image = UIImage()
+        
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             image = pickerImage
         }
         
         let convertImage = Convert.convertTOCVPixelBuffer(image: image)
-        imageView.image = convertImage.1
+        
         
         guard let prediction = try? caption(image: convertImage.0) else {
             return
@@ -48,12 +49,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         for i in prediction.1 {
             if i.key.contains(prediction.0) {
-                print(i)
-                predictionDescrition = "This image has \(Double(floor(i.value * 100)))% of chance to be \(i.key)"
+                predictionDescrition = "This image has \(Double(floor(i.value * 100)))% of chance to be \(i.key.replacingOccurrences(of: "_", with: " "))"
             }
         }
-        print(predictionDescrition)
         self.FoodNme.text = "\(predictionDescrition)"
+        self.imageView.image = convertImage.1
         
     }
 }
